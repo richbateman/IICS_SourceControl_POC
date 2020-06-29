@@ -1,0 +1,234 @@
+{
+  "objectInfo" : {
+    "id" : "0czLInLbAaZi7gR2L0n60c",
+    "name" : "Mass_Portal_Enable_Users_P3_Task_Flow",
+    "type" : "WORKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011CAT0N000000000002"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "i5xpGdUNTQRdYtQr4lMhIo",
+    "name" : "6_Mass_Portal_Enable_Users_P3_Replication",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011CAT0Z000000000006"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PPP"
+  }, {
+    "id" : "gfezhvwHss2g5n9uTKtFOc",
+    "name" : "7_Mass_Portal_Enable_Users_P3_Account_Share_Business",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011CAT0Z000000000007"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "This task creates an account share record that ties the Customer’s Business to their portal user record.  It does this by querying through the connection records that the Customer’s Contact’s Account is tied to, looking for only “Business” Type values (such as Corporation, Limited Liability Company, etc.) for the Accounts on the “LLC_BI__Connected_To__c” field on Connection, and creating an Account share using that portal user and that business account, with an AccountAccessLevel of “Edit”.\r\nThis allows the customer to upload and see portal-enabled documents from the Business’s AccountDocMan.\r\nIt does not take a list of Business ID’s - it will portal-enable all business relationships connected (via LLC_BI__Connection__c record) to the Individual relationship that satisfy the Type criteria.\r\nIt also looks for existing Business Share records to make sure that duplicates do not get inserted.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PPP"
+  }, {
+    "id" : "57gibGEqTmSglzWK2rE7MG",
+    "name" : "8_Mass_Portal_Enable_Users_P3_Loan_Share_Replication",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011CAT0Z000000000005"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PPP"
+  }, {
+    "id" : "3MS8eRa1DcKjMNd7WnrHwN",
+    "name" : "9_Mass_Portal_Enable_Users_P3_Loan_Share",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011CAT0Z000000000003"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "This task identifies specific loans that a customer wants to enable, and creates a LLC_BI__Loan__share record that ties it to the Customer Portal user.  This allows the user to upload and access portal-enabled documents on that LoanDocMan.\r\nIt also looks for existing Loan Share records to make sure that duplicates do not get inserted.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PPP"
+  }, {
+    "id" : "03jAHra6VKmi4daOR56fUJ",
+    "name" : "5_Mass_Portal_Enable_Users_P3_AccountShare_Individual_Update",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011CAT0Z000000000004"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "After the user record gets created, an accountshare record does get created by Salesforce that ties the user to the associated Contact’s associated Account (which will be the individual Account).  However, the AccountLevelAccess on that share record is too restricted to have all the needed portal functionality.This task finds that existing share record, and updates the “AccountLevelAccess” field to ‘Edit instead of ‘Read’, leaving CaseLevelAccess and OpportunityLevelAccess still at None’, as they are not needed for Customer Portal.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PPP"
+  }, {
+    "id" : "2zuYYBhGA5te7hN1lyqgMZ",
+    "name" : "2_Mass_Portal_Enable_Users_Report_Processor",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011CAT0Z00000000000A"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PPP"
+  }, {
+    "id" : "6GR3lYdgXGDlV6vL2OxJ0o",
+    "name" : "4_Mass_Portal_Enable_Users_P3_Replication",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011CAT0Z000000000009"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PPP"
+  }, {
+    "id" : "a8EJLTeQCNhiGpWddcGIKp",
+    "name" : "1_Mass_Portal_Enable_Users_P3_Replication",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011CAT0Z000000000002"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PPP"
+  }, {
+    "id" : "4VLlaaX7QrResuge3WUBiI",
+    "name" : "3_Mass_Portal_Enable_Users_P3_Users",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011CAT0Z00000000000B"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "This task creates a user record based on existing data from the contact, as well as other hard-coded values defined below.\r\n\r\n",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PPP"
+  } ]
+}

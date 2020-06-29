@@ -1,0 +1,110 @@
+{
+  "objectInfo" : {
+    "id" : "gfezhvwHss2g5n9uTKtFOc",
+    "name" : "7_Mass_Portal_Enable_Users_P3_Account_Share_Business",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011CAT0Z000000000007"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "This task creates an account share record that ties the Customer’s Business to their portal user record.  It does this by querying through the connection records that the Customer’s Contact’s Account is tied to, looking for only “Business” Type values (such as Corporation, Limited Liability Company, etc.) for the Accounts on the “LLC_BI__Connected_To__c” field on Connection, and creating an Account share using that portal user and that business account, with an AccountAccessLevel of “Edit”.\r\nThis allows the customer to upload and see portal-enabled documents from the Business’s AccountDocMan.\r\nIt does not take a list of Business ID’s - it will portal-enable all business relationships connected (via LLC_BI__Connection__c record) to the Individual relationship that satisfy the Type criteria.\r\nIt also looks for existing Business Share records to make sure that duplicates do not get inserted.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "5Gs4ntVbbgqjRtRMWokcGt",
+    "name" : "Mass_Portal_Enable_Account_Share_Mapping_Connected_Business",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011CAT17000000000005"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/PPP"
+  }, {
+    "id" : "f2j1mZNN7c2gcVVWRS86Kk",
+    "name" : "SFDC_SBA_Rich_Estock",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011CAT0B000000000003"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "87bwnVCnh6pbExr59SWHUN",
+    "name" : "eTran_FF",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011CAT0B000000000002"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "btlifZGEkMMefD1cojpCwZ",
+    "name" : "DEV-GROUP",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011CAT25000000000002"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  } ]
+}

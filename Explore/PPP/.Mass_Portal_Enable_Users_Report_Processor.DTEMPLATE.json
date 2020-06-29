@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "1abIPhS87buh16Vfzy05WW",
+    "name" : "Mass_Portal_Enable_Users_Report_Processor",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "011CAT17000000000006"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Processes PPP_Portal Enablement into a usable FF for existing mappings",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ ]
+}
